@@ -36,3 +36,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Checkout github repository
+        uses: actions/checkout@v2
+
+      - name: Update Github Workflow to avoid disabling of Github Actions
+        uses: gautamkrishnar/keepalive-workflow@master # using the workflow with default settings
